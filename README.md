@@ -1,2 +1,2 @@
 # FAKE-JOB-DETECTOR
-Just a AI/ML project.
+Just an AI/ML project.
