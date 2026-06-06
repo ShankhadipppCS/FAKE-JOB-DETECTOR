@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install lightweight test dependencies
+        run: |
+          cd stock-market-platform
+          python -m pip install --upgrade pip
+          pip install fastapi httpx pandas numpy scikit-learn sqlalchemy pydantic pytest pytest-cov
+      - name: Run tests
+        run: |
+          cd stock-market-platform
+          pytest --cov=app --cov-report=term-missing --cov-fail-under=80
+

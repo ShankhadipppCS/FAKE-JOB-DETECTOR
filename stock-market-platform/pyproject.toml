@@ -1,0 +1,13 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["app/dashboard/*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
