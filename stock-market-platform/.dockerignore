@@ -1,0 +1,13 @@
+.env
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.coverage
+htmlcov
+mlruns
+models
+data/raw/*.csv
+data/processed/*.csv
+data/features/*.csv
+
